@@ -5,7 +5,7 @@ require('dotenv').config();
 
 const port = process.env.PORT || 3019;
 const app = express();
-app.use(express.static(path.join(__dirname)));
+app.use(express.static(__dirname + "/public/"));
 app.use(express.urlencoded({ extended: true }));
 
 mongoose.connect(process.env.MONGODB_URI)
